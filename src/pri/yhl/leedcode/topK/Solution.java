@@ -9,6 +9,16 @@ import java.util.*;
  * Created by yhl on 2016/7/24.
  */
 public class Solution {
+    public void inspect(List<Object> list) {
+        for(Object obj : list) {
+                System.out.println(obj);
+            }
+        list.add(1); //这个操作在当前方法的上下文是合法的。
+    }
+    public void test() {
+        List<String> strs = new ArrayList<String>();
+//        　　inspect(strs); //编译错误
+    }
     public List<Integer> topKFrequent(int[] nums, int k) {
         quickSort(nums,0,nums.length-1);
         Map<Integer,Integer> map = new HashMap<Integer,Integer>();
