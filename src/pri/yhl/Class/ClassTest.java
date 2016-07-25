@@ -17,6 +17,12 @@ public class ClassTest {
 //        conTest.getClassLoader().loadClass();
         assertEquals(con.getI(),10);
     }
+    @Test
+    public void ABTest(){
+        B b = new B();
+        System.out.println(b.getA());
+        System.out.println(b.a);
+    }
 }
 
 class ConTest {
@@ -26,5 +32,14 @@ class ConTest {
     }
     public int getI(){
         return this.i;
+    }
+}
+class A{
+    public int a = 1;
+}
+class B extends A{
+    public int a = 2;
+    public int getA(){
+        return super.a;
     }
 }
