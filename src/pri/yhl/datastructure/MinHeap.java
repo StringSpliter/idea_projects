@@ -82,7 +82,10 @@ public class MinHeap<T extends Comparable>{
 
 //          URL url = MinHeap.class.getClassLoader().getResource("t.txt");
 //          System.out.println(url.getPath());
-
+/*
+* VM options:
+* -classpath %CLASSPATH%;E:\classloader\Classloader;D:\idea-projects\idea_projects\out\production\idea_projects;D:\idea-projects\idea_projects\out\production\idea_projects\pri\yhl\datastructure
+* */
         URL url = Thread.currentThread().getContextClassLoader().getResource("t.txt");
         System.out.println(url.getPath());
 
