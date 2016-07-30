@@ -4,6 +4,10 @@ import com.sun.xml.internal.bind.v2.model.core.EnumLeafInfo;
 import org.junit.Test;
 
 import java.net.URL;
+import java.sql.Time;
+import java.util.Date;
+import java.util.Timer;
+import java.util.concurrent.*;
 
 /**
  * Created by yhl on 2016/7/26.
@@ -61,7 +65,7 @@ public class MinHeap<T extends Comparable>{
         }
     }
 
-    public static void main(String args[]){
+    public static void main(String args[]) throws ExecutionException, InterruptedException {
 //        Element[] elements = new Element[10];
 //        int [] eles = {53,17,78,9,45,65,87,23};
 //        for(int i = 0;i<8;i++){
@@ -84,16 +88,49 @@ public class MinHeap<T extends Comparable>{
 //          System.out.println(url.getPath());
 /*
 * VM options:
-* -classpath %CLASSPATH%;E:\classloader\Classloader;D:\idea-projects\idea_projects\out\production\idea_projects;D:\idea-projects\idea_projects\out\production\idea_projects\pri\yhl\datastructure
+* -server -classpath %CLASSPATH%;E:\classloader\Classloader;D:\idea-projects\idea_projects\out\production\idea_projects;D:\idea-projects\idea_projects\out\production\idea_projects\pri\yhl\datastructure
 * */
-        URL url = Thread.currentThread().getContextClassLoader().getResource("t.txt");
-        System.out.println(url.getPath());
-
+//        URL url = Thread.currentThread().getContextClassLoader().getResource("t.txt");
+//        System.out.println(url.getPath());
+        Date before = new Date();
+        System.out.println(before.getTime());
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        Future future = executor.submit(new Task());
+        int res = (Integer) future.get();
+        System.out.println("the time leave is "+res+"  ");
+        Date after = new Date();
+        System.out.println(after.getTime());
+        System.out.println(executor.isShutdown());
+        Future future1 = executor.submit(new Task());
+        int res1 = (Integer) future1.get();
+        System.out.println("the time leave is "+res+"  ");
+        System.out.println(executor.isShutdown());
+//        ThreadLocal
     }
 public static void setOut(Out out){
     out = new Out(3);
 }
 
+
+
+}
+class Task implements Callable<Integer>{
+
+
+    @Override
+    public Integer call() throws Exception {
+        int period = 0;
+        while(true){
+            Date date = new Date();
+            Thread.sleep(100);
+            System.out.println("I'm a daemon thread and running!"+(date.getTime()-1469773768648L));
+            period = (int)(date.getTime()-1469773768648L);
+            if( date.getTime() > 0){
+                break;
+            }
+        }
+        return period;
+    }
 }
 class Out{
     int id;
