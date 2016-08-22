@@ -10,26 +10,28 @@ import java.io.FileNotFoundException;
  */
 public class PCTest {
     static boolean isProduct = false;
+
     public static void main(String args[]) throws InterruptedException {
 /*iterator---Collection集合的fail-fast*/
-        Set<String> set = new HashSet<String>();
-        set.add("as");
-        set.add("ad");
-        set.add("af");
-        set.add("ag");
-        set.add("ah");
-        Iterator it = set.iterator();
+//        Set<String> set = new HashSet<String>();
+//        set.add("as");
+//        set.add("ad");
+//        set.add("af");
+//        set.add("ag");
+//        set.add("ah");
+//        Iterator it = set.iterator();
+//
+//        while (it.hasNext()) {
+//            it.next();
+//            it.remove();
+//            set.add("sss");
+//        }
 
-        while(it.hasNext()){
-            it.next();
-            it.remove();
-            set.add("sss");
-        }
 
-    }
-/*--测试notify与wait--*/
-        Object obj = new Object();
-//        Productor pro = new Productor(obj);
+
+    /*--测试notify与wait--*/
+    Object obj = new Object();
+    //        Productor pro = new Productor(obj);
 //        pro.start();;
 //        for(int i=0;i<10;i++) {
 //            synchronized (obj) {
@@ -68,6 +70,20 @@ public class PCTest {
 //        }
 //
 //    }
+        Scanner in = new Scanner(System.in);
+        int n = 0;
+        while (in.hasNext()&&((n=in.nextInt())!=0)) {//注意while处理多个case
+            int time = 0;
+            while(n>2){
+                int m = n/3;
+                time += m;
+                n -=3*m;
+                n+=m;
+            }
+            if(n==2){ time++;}
+            System.out.println(time);
+        }
+    }
 }
 class Productor extends Thread{
     int i = 0;
