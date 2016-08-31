@@ -1,12 +1,16 @@
 package pri.yhl.common.set;
 
+import org.junit.Test;
+
+import java.io.ObjectInputStream;
 import java.util.*;
 import java.util.Random;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by yhl on 16-3-10.
  */
-public class HashSetTest {
+public class HashSetTest<T> {
     public static void main(String[] args){
 
 
@@ -15,9 +19,15 @@ public class HashSetTest {
         for(int i=0;i<10; i++){
             Diss dis = new Diss(i);
             set.add(dis);
-
         }
+
         System.out.println(set.add(new Diss(0)));
+    }
+    @Test
+    public void testT(){
+        Object obj = (new HashSet<>());
+        ConcurrentHashMap<String,String> ch = new ConcurrentHashMap<String,String>();
+        ch.put(null,"ff");
     }
 }
 class Diss{
