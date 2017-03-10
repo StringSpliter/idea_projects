@@ -16,7 +16,7 @@ public class CharUtils{
                 "!@#$%^&amp;*()_+{}[]|\"'?/:;&lt;&gt;,.", "！￥……（）——：；“”‘’《》，。？、", "不要啊",
                 "やめて", "韩佳人", "한가인" };
         for (String str : strArr) {
-            System.out.println("===========&gt; 测试字符串：" + str);
+            System.out.println("===========; 测试字符串：" + str);
             System.out.println("正则判断：" + isChineseByREG(str) + " -- "
                     + isChineseByName(str));
             System.out.println("Unicode判断结果 ：" + isChinese(str));
