@@ -1,7 +1,7 @@
 package pri.yhl.leedcode;
 public class Main2{
     public static void main(String args[]){
-
+    System.out.println("\\\\\\");
     }
 }
 //public class Main2{
@@ -69,7 +69,6 @@ public class Main2{
 //
 //    }
 //}
-
 
 //package pri.yhl.leedcode;
 //class Node {
