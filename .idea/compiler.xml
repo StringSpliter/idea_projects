@@ -28,5 +28,6 @@
     <bytecodeTargetLevel>
       <module name="idea_java" target="1.5" />
     </bytecodeTargetLevel>
+    </annotationProcessing>
   </component>
 </project>
