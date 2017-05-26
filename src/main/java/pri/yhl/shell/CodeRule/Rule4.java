@@ -31,10 +31,10 @@ public class Rule4 extends CodeRule{
             }
 
         }
-        CodeRuleRS rs = new CodeRuleRS();
-        rs.setErrLines(list);
-        rs.setRuleType(this.type);
-        return rs;
+//        CodeRuleRS rs = new CodeRuleRS();
+//        rs.setErrLines(list);
+//        rs.setRuleType(this.type);
+//        return rs;
     }
     public static void main(String args[]){
         String script = "#!/bin/bash\n" +
