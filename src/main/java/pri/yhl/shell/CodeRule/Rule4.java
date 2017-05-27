@@ -35,6 +35,7 @@ public class Rule4 extends CodeRule{
 //        rs.setErrLines(list);
 //        rs.setRuleType(this.type);
 //        return rs;
+        return null;
     }
     public static void main(String args[]){
         String script = "#!/bin/bash\n" +
