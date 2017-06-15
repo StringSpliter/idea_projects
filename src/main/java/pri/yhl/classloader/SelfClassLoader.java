@@ -32,6 +32,7 @@ public class SelfClassLoader extends ClassLoader{
         System.out.println(super.getClass());
     }
             public static void main(String args[]) throws IllegalAccessException, InstantiationException {
+                    SelfClassLoader.class.getClassLoader().loadClass();
                    String s1 = "a";
                    String s2 = s1 + "b";
                    String s3 = "a" + "b";

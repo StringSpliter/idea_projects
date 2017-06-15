@@ -10,15 +10,23 @@ import java.lang.reflect.InvocationTargetException;
  * Created by yhl on 2016/6/22.
  */
 public class ClassTest {
+    public enum  Tg{
+        isT("isT"),isG("isG");
+        String sd ;
+        Tg(String sd){
+            this.sd = sd;
+        }
+    }
     @Test
     public void contrustorTest() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         Class<ConTest> conTest = ConTest.class;
         ConTest con = conTest.getConstructor(Integer.class).newInstance(new Integer(10));
 //        conTest.getClassLoader().loadClass();
-        assertEquals(con.getI(),10);
+        assertEquals(con.getI(),100);
     }
     @Test
     public void ABTest(){
+        System.out.println(Tg.isG.name());
         B b = new B();
         System.out.println(b.getA());
         System.out.println(b.a);
