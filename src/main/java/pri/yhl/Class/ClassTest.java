@@ -5,6 +5,7 @@ import org.junit.Test;
 import org.omg.PortableInterceptor.Interceptor;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Stack;
 
 /**
  * Created by yhl on 2016/6/22.
@@ -30,6 +31,8 @@ public class ClassTest {
         B b = new B();
         System.out.println(b.getA());
         System.out.println(b.a);
+        Stack stack = new Stack();
+        
     }
 }
 
